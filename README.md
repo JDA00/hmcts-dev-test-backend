@@ -115,15 +115,31 @@ Creates a new task in the system.
 
 ## Project Structure
 
-- `src/main/java/uk/gov/hmcts/reform/dev/Application.java` - Spring Boot entry point
-- `src/main/java/uk/gov/hmcts/reform/dev/config/WebConfig.java` - CORS configuration
-- `src/main/java/uk/gov/hmcts/reform/dev/controllers/TaskController.java` - Task management endpoint
-- `src/main/java/uk/gov/hmcts/reform/dev/dto/CreateTaskRequest.java` - Request DTO with validation
-- `src/main/java/uk/gov/hmcts/reform/dev/dto/ErrorResponse.java` - Error response format
-- `src/main/java/uk/gov/hmcts/reform/dev/exceptions/GlobalExceptionHandler.java` - Centralized error handling
-- `src/main/java/uk/gov/hmcts/reform/dev/models/Task.java` - Task entity with TaskStatus enum
-- `src/main/java/uk/gov/hmcts/reform/dev/repositories/TaskRepository.java` - Task data access
-- `src/main/java/uk/gov/hmcts/reform/dev/services/TaskService.java` - Task business logic
+```
+src/
+├── main/
+│   ├── java/uk/gov/hmcts/reform/dev/
+│   │   ├── config/WebConfig.java               # CORS configuration
+│   │   ├── controllers/
+│   │   │   ├── CaseController.java             # Case management endpoint
+│   │   │   ├── RootController.java             # Root welcome endpoint
+│   │   │   └── TaskController.java             # Task management endpoint
+│   │   ├── dto/
+│   │   │   ├── CreateTaskRequest.java          # Request DTO with validation
+│   │   │   └── ErrorResponse.java              # Error response format
+│   │   ├── exceptions/GlobalExceptionHandler.java  # Centralized error handling
+│   │   ├── models/
+│   │   │   ├── ExampleCase.java                # Case entity
+│   │   │   └── Task.java                       # Task entity with TaskStatus enum
+│   │   ├── repositories/TaskRepository.java    # Task data access
+│   │   ├── services/TaskService.java           # Task business logic
+│   │   └── Application.java                    # Spring Boot entry point
+│   └── resources/application.yaml              # Application configuration
+├── test/                                       # Unit tests
+├── integrationTest/                            # Integration tests
+├── functionalTest/                             # Functional tests
+└── smokeTest/                                  # Smoke tests
+```
 
 ## Configuration
 
